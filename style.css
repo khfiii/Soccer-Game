@@ -1,0 +1,401 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    display: flex; 
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+}
+
+
+.container{
+    width: 1000px;
+    height: 600px;
+    position: relative;
+}
+
+.game-menu{
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.option{
+    margin-top: 20px;
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-option{
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+}
+
+.instruction{
+    margin-top: 10px;
+    flex-basis: 40%;
+    border-radius: 1px solid green;
+}
+
+.play-button{
+    display: flex;
+    gap: 5px;
+}
+
+.play-button > button:nth-child(1){
+    flex-basis: 50%;
+}
+.play-button > button:nth-child(2){
+    flex-basis: 50%;
+}
+
+.hide{
+    display: none !important;
+}
+
+input::placeholder, select, option{
+    color: black;
+    font-size: 12px;
+}
+
+input{
+    color: black;
+}
+
+button{
+    color: black;
+}
+
+.instruction{
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#close{
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#play{
+    background-color: rgb(64, 64, 34);
+    padding: 5px;
+    color: white;
+}
+
+#instruction{
+    background-color: brown;
+    padding: 5px;
+    color: white;
+}
+
+.radio-input{
+    display: flex;
+    gap: 20px;
+}
+
+.item-radio{    
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-game{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('Sprites/background1.jpg');
+}
+
+.goal-animation{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    animation: goal 3s forwards;
+}
+
+.country-flag{
+    position: absolute;
+    width: 100%;
+    top: 380px;
+    gap: 0.5    px;
+    display: flex;
+    z-index: 1;
+}
+
+.flag-item{
+    width: 80px;
+    height: 60px;
+}
+
+.game-header{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.player-name{
+    font-size: 10px;
+    text-align: center;
+    width: 150px;
+    line-height: 40px;
+    height: 40px;
+    background-color: rgb(70, 70, 61);
+}
+
+.name, small{
+    font-size: 15px;
+}
+.match-history{
+    font-size: 15px;
+    text-align: center;
+    width: 100px;
+    line-height: 40px;
+    height: 40px;
+    background-color: rgb(70, 70, 61);
+}
+
+.scor-point{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.player1-point, .player2-point{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: blue;
+    font-weight: bold;
+}
+
+.player1, .player2{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: 1px solid red;
+    transition: all 0.2s;
+}
+
+.player2{
+    transform: rotateY(180deg);
+}
+
+.timer{
+    text-align: center;
+}
+
+
+.point{
+    display: flex;
+    gap: 5px;
+}
+
+.game-point{
+    display: flex;
+    gap: 15px;
+    padding-top: 25px;
+}
+
+.player1-flag, .player2-flag{
+    width: 50px;
+    height: 40px;
+}
+
+.player1-flag{
+   
+}
+.player2-flag{
+
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.goal-side{
+    /* position: absolute; */
+    /* border: 1px solid red; */
+}
+
+.player1-side{
+    z-index: 2;
+    position: absolute;
+    top: 320px;
+    left: 20px;
+    /* border: 1px solid red; */
+}
+.player2-side{
+    z-index: 2;
+    position: absolute;
+    top: 320px;
+    left: 880px;
+    /* border: 1px solid red; */
+}
+.player2-side img{
+    transform: rotatey(180deg);
+   
+}
+.players{
+    position: absolute;
+}
+
+.player1{
+    position: absolute;
+    z-index: 3;
+    left: 200px;
+    top: 395px;
+}
+.player2{
+    position: absolute;
+    z-index: 3;
+    left: 750px;
+    top: 395px;
+}
+
+.player1 img{
+    border: 1px solid red;
+    width: 120px;
+    position: absolute;
+    z-index: 5;
+    transition: all 0.1s;
+}
+
+.player2 img{
+    z-index: 5;
+    border: 1px solid red;
+    width: 120px;
+    position: absolute;
+    transform: rotateY(180deg);
+    transition: all 0.1s;   
+}
+
+.ball{
+    position: absolute;
+    top: 300px;
+    left: 475px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    border: 1px solid red;
+    transition: all 0.2s;
+}
+
+.item{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 200px;
+    z-index: 10;
+    /* background-image: url('Sprites/Decrease\ Ball.png');
+    background-size: contain; */
+}
+
+.timer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.timer h1{
+    font-size: 50px;
+}
+
+/* 
+.debug{
+    border: 1px solid red;
+} */
+
+.result{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    
+    
+}
+
+
+.run{
+    animation: run 0.2s;
+}
+
+.backInDown{
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+.result > .content {
+    width: 20rem;
+    padding: 10px;
+    background-image: url('Sprites/Characters/Character 01 - Brazil/Move Backward/Move Backward_001.png');
+}
+
+@keyframes goal {
+    0%{
+        opacity: 100%;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+        transform: translateY(-2000px) scale(0.7);
+    }
+    80%{
+        opacity: 0.7;
+        transform: translateY(0px) scale(1.05);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes brazil-run {
+    0%{
+
+    }
+}

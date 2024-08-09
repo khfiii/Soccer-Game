@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Footbal Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="game-menu hide">
+        <div class="option">
+          <h2 class="logo">World Head Footbal</h2>
+        <div class="input-option">
+            <label>Player 1 Name </label>
+            <input type="text" name="player1" placeholder="Player 1 name" />
+            <label>Player 2 Name </label>
+            <input type="text" name="player2" placeholder="Player 2 name" />
+            <label>Player 1 Country</label>
+            <select name="player1country">
+              <option value="brazil">Brazil</option>
+              <option value="england">England</option>
+              <option value="germany">Germany</option>
+              <option value="italy">Italy</option>
+              <option value="japan">Japan</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="portugal">Portugal</option>
+              <option value="spain">Spain</option>
+            </select>
+            <label>Player 2 country</label>
+            <select name="player2country">
+              <option value="brazil">Brazil</option>
+              <option value="england">England</option>
+              <option value="germany">Germany</option>
+              <option value="italy">Italy</option>
+              <option value="japan">Japan</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="portugal">Portugal</option>
+              <option value="spain">Spain</option>
+            </select>
+            <label>Select Level</label>
+            <select name="level">
+              <option value="30">Easy</option>
+              <option value="20">Medium</option>
+              <option value="15">Hard</option>
+            </select>
+
+            <div class="radio-input">
+              <div class="item-radio">
+                <img src="Sprites/Ball 01.png" width="50" alt="" />
+                <input type="radio" checked value="ball1" name="ball" />
+              </div>
+              <div class="item-radio">
+                <img src="Sprites/Ball 02.png" width="50" alt="" />
+                <input type="radio" value="ball2" name="ball" />
+              </div>
+              <div class="item-radio"></div>
+            </div>
+
+            <div class="play-button">
+              <button id="play">Play Game</button>
+              <button id="instruction" onclick="showInstruction()">
+                Instruction
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="instruction hide">
+          <h2>How to play the game</h2>
+          <p>1. Input Username</p>
+          <p>2. Move Character to bounce ball</p>
+          <p>3. Get high score and win</p>
+          <p>4. Enjoy</p>
+
+          <id id="close" onclick="closeInstruction()">✖️</id>
+        </div>
+      </div>
+
+      <div class="timer hide">
+        <h1 id="txtTimer">1</h1>
+      </div>
+
+      <div class="play-game">
+        <div class="game-header">
+          <div class="player-name">
+            <small class="name"></small>
+          </div>
+          <div class="game-point">
+            <div class="player1-flag">
+              <img src="Sprites/Flag/Brazil.png" width="55" alt="" />
+            </div>
+            <div class="scor-point">
+              <div class="point">
+                <div class="player1-point">0</div>
+                <div class="player2-point">0</div>
+              </div>
+
+              <div class="timer">
+                <h4>TIMER</h4>
+                <p class="timerCount">30</p>
+              </div>
+            </div>
+            <div class="player2-flag">
+              <img src="Sprites/Flag/Brazil.png" width="55" alt="" />
+            </div>
+          </div>
+          <div class="match-history">
+            <small>Match History</small>
+          </div>
+        </div>
+
+        <div class="country-flag">
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+          <div class="flag-item"></div>
+        </div>
+
+        <div class="players">
+          <div class="player1">
+            <!-- <img
+              src="Sprites/Characters/Character 01 - Brazil/Idle/Idle_001.png"
+              width="120"
+              alt=""
+            /> -->
+          </div>
+          <div class="player2">
+            <!-- <img
+              src="Sprites/Characters/Character 01 - Brazil/Idle/Idle_001.png"
+              width="120"
+              alt=""
+            /> -->
+          </div>
+
+          <div class="ball">
+            <!-- <img src="Sprites/Ball 01.png" width="50" alt="" /> -->
+          </div>
+
+          <div class="items">
+            <!-- <div class="item"></div> -->
+          </div>
+        </div>
+
+        <div class="goal-side">
+          <div class="player1-side">
+            <img src="Sprites/goal.png" alt="" width="100" />
+          </div>
+          <div class="player2-side">
+            <img src="Sprites/goal.png" alt="" width="100" />
+          </div>
+        </div>
+      </div>
+
+      <div class="result backInDown hide">
+        <div class="content">Final Result</div>
+        <div>Score Player 1 : 0</div>
+        <div>Score Player 2 : 0</div>
+        <div>
+          <button>Save History</button> 
+          <button onclick="restartGame()">Restart The Game</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
